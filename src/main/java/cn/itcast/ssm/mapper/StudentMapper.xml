@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.ssm.mapper.StudentMapper" >
+  	<insert id="insertStudent" parameterType="cn.itcast.ssm.entity.Student">
+  		<if test="stu != null">
+  			insert into student (name, age) values(#{stu.name }, #{stu.age })
+  		</if>
+  	</insert>
+  	
+  	<select id="getStudentById" resultType="cn.itcast.ssm.entity.Student">
+  		select * from student where sno = #{sno }
+  	</select>
+</mapper>
